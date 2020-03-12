@@ -48,7 +48,7 @@ export default {
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-column-gap: 10px;
   grid-row-gap: 15px;
-  background: #4c5270;
+  background: #5d6c89;
   height: 500px;
   width: 500px;
   padding: 20px;
@@ -59,8 +59,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #bcece0;
-  border: 1px solid #bcece0;
+  background: #fbf6f3;
   font-size: 36px;
   font-weight: bold;
 }
