@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" @keyup='gameAction'>
     <div>Score:{{score}}</div>
     <div class="board-container">
       <div v-for="(tile, index) in board.flat()" :key="index" class="board-tile"> {{tile}} </div>
@@ -8,6 +8,13 @@
 </template>
 
 <script>
+const KEY_CODES = {
+  up: 38,
+  down: 40,
+  left: 37,
+  right: 39
+};
+
 export default {
   name: 'App',
   data() {
@@ -25,13 +32,17 @@ export default {
       return this.board.flat().reduce((a, b) => a + b, 0);
     }
   },
+  mounted() {
+    document.addEventListener('keyup', this.gameAction);
+  },
   methods: {
-    gameAction(direction) {
-      console.log(direction);
+    gameAction() {
       // let boardClone = JSON.parse(JSON.stringify(this.board));
-      this.board.forEach((row, index) => {
-        console.log('row', row, 'index', index);
-      });
+      if (event.keyCode == KEY_CODES.left) {
+        this.board.forEach((row, index) => {
+          console.log('row', row, 'index', index);
+        });
+      }
     }
   }
 };
