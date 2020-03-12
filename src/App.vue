@@ -28,8 +28,9 @@ export default {
   methods: {
     gameAction(direction) {
       console.log(direction);
-      this.board.forEach(row => {
-        console.log('row', row);
+      // let boardClone = JSON.parse(JSON.stringify(this.board));
+      this.board.forEach((row, index) => {
+        console.log('row', row, 'index', index);
       });
     }
   }
