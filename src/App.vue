@@ -18,6 +18,14 @@ export default {
         [null, 2, 2, null]
       ]
     };
+  },
+  methods: {
+    gameAction(direction) {
+      console.log(direction);
+      this.board.forEach(row => {
+        console.log('row', row);
+      });
+    }
   }
 };
 </script>
@@ -40,16 +48,19 @@ export default {
   grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-column-gap: 10px;
   grid-row-gap: 15px;
+  background: #4c5270;
   height: 500px;
   width: 500px;
-  border: 5px solid rgba(255, 210, 126, 0.89);
+  padding: 20px;
+  /* border: 5px solid #f652a0; */
 }
 
 .board-tile {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
+  background: #bcece0;
+  border: 1px solid #bcece0;
   font-size: 36px;
   font-weight: bold;
 }
