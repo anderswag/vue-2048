@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <div>Score:{{score}}</div>
     <div class="board-container">
       <div v-for="(tile, index) in board.flat()" :key="index" class="board-tile"> {{tile}} </div>
     </div>
@@ -18,6 +19,11 @@ export default {
         [null, 2, 2, null]
       ]
     };
+  },
+  computed: {
+    score() {
+      return this.board.flat().reduce((a, b) => a + b, 0);
+    }
   },
   methods: {
     gameAction(direction) {
